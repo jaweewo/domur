@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan Doménech - Bróker Hipotecario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            padding: 2rem 5%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex: 1;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #7eaea2;
+            object-fit: cover;
+            background-color: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #7eaea2;
+        }
+
+        .profile-info h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            color: #7eaea2;
+            margin-bottom: 0.5rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-shadow: 0 0 30px rgba(127, 212, 160, 0.3);
+        }
+
+        .profile-info p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            font-weight: 300;
+        }
+
+        /* Navegación debajo del nombre */
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            background: rgba(127, 212, 160, 0.1);
+            color: #7eaea2;
+            padding: 0.6rem 1.5rem;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid #7eaea2;
+        }
+
+        .nav-button:hover {
+            background: #7eaea2;
+            color: #1a1a1a;
+            transform: translateY(-2px);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo-space {
+            width: 100px;
+            height: 100px;
+            border: 2px dashed #7eaea2;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7eaea2;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .btn-contact {
+            background: linear-gradient(135deg, #7eaea2 0%, #5fb87d 100%);
+            color: #1a1a1a;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(127, 212, 160, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(127, 212, 160, 0.5);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        section {
+            margin-bottom: 5rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, #222222 0%, #1a1a1a 100%);
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid #2a2a2a;
+        }
+
+        section h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #7eaea2;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            text-shadow: 0 0 40px rgba(127, 212, 160, 0.4);
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, #7eaea2 0%, transparent 100%);
+        }
+
+        /* Quién Soy con imagen */
+        .quien-soy-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .quien-soy-text {
+            flex: 1;
+        }
+
+        .quien-soy-image {
+            width: 300px;
+            height: 400px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 3px solid #7eaea2;
+            box-shadow: 0 10px 40px rgba(127, 212, 160, 0.3);
+            background-color: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            color: #dddddd;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Servicios Grid */
+        .servicios-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: center;
+        }
+
+        .servicios-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .servicio-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 2px solid #7eaea2;
+            box-shadow: 0 8px 25px rgba(127, 212, 160, 0.2);
+            background-color: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .servicio-card {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #7eaea2;
+            transition: all 0.3s ease;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(127, 212, 160, 0.2);
+        }
+
+        .servicio-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #7eaea2;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .servicio-card p {
+            font-size: 1rem;
+            color: #cccccc;
+        }
+
+        /* Bancos Section */
+        .bancos-content {
+            text-align: center;
+        }
+
+        /* Footer Contact */
+        .footer-contact {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            border-radius: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .footer-contact h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-contact p {
+            color: #cccccc;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-section {
+                flex-direction: column;
+            }
+
+            .header-right {
+                flex-direction: column;
+            }
+
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 2rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .servicios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quien-soy-content {
+                grid-template-columns: 1fr;
+            }
+
+            .quien-soy-image {
+                width: 100%;
+                height: 300px;
+            }
+
+            .servicios-intro {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="profile-section">
+                <div class="profile-image">📸</div>
+                <div class="profile-info">
+                    <h1>Jonathan Doménech</h1>
+                    <p>Bróker Hipotecario Profesional</p>
+                    <nav class="nav-menu">
+                        <a href="#quien-soy" class="nav-button">Quién Soy</a>
+                        <a href="#servicios" class="nav-button">Servicios</a>
+                        <a href="#bancos" class="nav-button">Todos los Bancos</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="logo-space">TU LOGO AQUÍ</div>
+                <a href="mailto:jldomur.broker@gmail.com" class="btn-contact">Contactar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Quién Soy -->
+        <section id="quien-soy">
+            <h2>Quién Soy</h2>
+            <div class="quien-soy-content">
+                <div class="quien-soy-text">
+                    <p>
+                        Soy Jonathan Doménech, bróker hipotecario especializado en ayudarte a encontrar la mejor 
+                        hipoteca para tu proyecto de vida. Mi misión es simplificar el proceso de financiación 
+                        y conseguir las mejores condiciones del mercado para ti.
+                        Miembro de ANICI (Asociación Nacional del ICI)
+                    </p>
+                    </p>
+                <p style="margin-top: 2rem; font-size: 1.2rem; color: #7eaea2; font-weight: 600;">
+                    Miembro de ANICI (Asociación Nacional del ICI)
+                </p>
+                    <p>
+                        Mi enfoque se basa en la transparencia, el asesoramiento personalizado y el compromiso 
+                        absoluto con los intereses de mis clientes. No trabajo para los bancos, trabajo para ti. 
+                        Cada situación es única, y mi objetivo es encontrar la solución financiera que mejor se 
+                        adapte a tus necesidades y circunstancias personales.
+                    </p>
+                    <p>
+                        Ya sea tu primera vivienda, una inversión inmobiliaria o la reunificación de deudas, 
+                        estoy aquí para guiarte en cada paso del camino con profesionalidad y cercanía.
+                    </p>
+                </div>
+                <div class="quien-soy-image">🖼️</div>
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section id="servicios">
+            <h2>Servicios</h2>
+            
+            <div class="servicios-intro">
+                <div>
+                    <p>Ofrezco un servicio integral y personalizado para todas tus necesidades de financiación hipotecaria. 
+                    Mi compromiso es estar contigo en cada paso del proceso, desde la primera consulta hasta la firma final.</p>
+                </div>
+                <div class="servicios-images">
+                    <div class="servicio-image">📞</div>
+                    <div class="servicio-image">💻</div>
+                </div>
+            </div>
+            
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <h3>Asesoramiento Hipotecario</h3>
+                    <p>Análisis completo de tu situación financiera y recomendación de las mejores opciones de hipoteca según tu perfil y objetivos.</p>
+                </div>
+                
+                <div class="servicio-card">
+                    <h3>Comparativa de Ofertas</h3>
+                    <p>Comparación exhaustiva entre múltiples entidades bancarias para garantizar que obtienes las mejores condiciones del mercado.</p>
+                </div>
+                
+                <div class="servicio-card">
+                    <h3>Negociación con Bancos</h3>
+                    <p>Negocio directamente con las entidades para conseguir mejores tipos de interés, reducir comisiones y optimizar las condiciones.</p>
+                </div>
+                
+                <div class="servicio-card">
+                    <h3>Gestión Integral</h3>
+                    <p>Me encargo de toda la documentación y trámites necesarios, desde la solicitud inicial hasta la firma de la escritura.</p>
+                </div>
+                
+                <div class="servicio-card">
+                    <h3>Reunificación de Deudas</h3>
+                    <p>Estudio y gestión de opciones para unificar tus préstamos y reducir tu cuota mensual, mejorando tu salud financiera.</p>
+                </div>
+                
+                <div class="servicio-card">
+                    <h3>Subrogación Hipotecaria</h3>
+                    <p>Análisis de tu hipoteca actual y búsqueda de mejores condiciones en otras entidades para reducir tus costes financieros.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trabajo con todos los bancos -->
+        <section id="bancos">
+            <div class="bancos-content">
+                <h2>Trabajo con Todos los Bancos</h2>
+                <p>
+                    Como bróker independiente, tengo acceso directo a la oferta hipotecaria de todas las 
+                    entidades bancarias del mercado español. Mi independencia es tu mayor ventaja.
+                </p>
+                <p style="margin-top: 2rem; font-size: 1.2rem; color: #7eaea2; font-weight: 600;">
+                    No tengo vínculos con ningún banco, por lo que mi único compromiso es conseguirte 
+                    la mejor hipoteca posible.
+                </p>
+                <p style="margin-top: 2rem;">
+                    Esto me permite comparar cientos de productos hipotecarios, negociar en tu nombre con 
+                    total libertad y garantizarte que obtendrás las mejores condiciones disponibles en el mercado. 
+                    Mientras un banco solo puede ofrecerte sus propios productos, yo puedo ofrecerte el mercado completo.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contacto Footer -->
+        <div class="footer-contact" id="contacto">
+            <h2>¿Listo para encontrar tu hipoteca ideal?</h2>
+            <p>Hablemos de tu proyecto. Sin compromiso, con total transparencia.</p>
+            <a href="mailto:jldomur.broker@gmail.com" class="btn-contact">Contacta Conmigo</a>
