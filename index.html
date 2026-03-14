@@ -354,6 +354,104 @@
                 grid-template-columns: 1fr;
             }
         }
+/* BOTONES */
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* BOTON GENERAL */
+
+.btn-wa{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:16px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:1rem;
+    transition:all .25s ease;
+}
+
+/* FORMULARIO */
+
+.btn-wa:first-child{
+    background: white;
+    color:black;
+}
+
+.btn-wa:first-child:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* WHATSAPP */
+
+.btn-wa:last-child{
+    background:#25D366;
+    color:white;
+}
+
+.btn-wa:last-child:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ICONOS */
+
+.btn-icon,
+.wa-icon{
+    width:20px;
+    height:20px;
+}
+        /* Footer */
+        footer {
+            padding: 2rem;
+            background: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content,
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .services h2,
+            .process h2,
+            .testimonials h2,
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
 
         /* Smooth Scroll */
         html {
@@ -381,7 +479,7 @@
                 <div class="logo-space">
                   <img src="img/DOMUR-LOGO.jpeg" alt="Logo Jonathan Doménech">
                 </div>
-                <a href="mailto:jldomur.broker@gmail.com" class="btn-contact">Contactar</a>
+                <a href="https://wa.me/34621057804" class="btn-contact">Contactar</a>
             </div>
         </div>
     </header>
@@ -397,11 +495,11 @@
                         Soy Jonathan Doménech, bróker hipotecario especializado en ayudarte a encontrar la mejor 
                         hipoteca para tu proyecto de vida. Mi misión es simplificar el proceso de financiación 
                         y conseguir las mejores condiciones del mercado para ti.
-                        Miembro de ANICI (Asociación Nacional del ICI)
+                        Miembro de ANICI (Asociación Nacional del Intermediario de crédito inmobiliario)
                     </p>
                     </p>
                 <p style="margin-top: 2rem; font-size: 1.2rem; color: #7eaea2; font-weight: 600;">
-                    Miembro de ANICI (Asociación Nacional del ICI)
+                    Miembro de ANICI (Asociación Nacional del Intermediario de crédito inmobiliario)
                 </p>
                     <p>
                         Mi enfoque se basa en la transparencia, el asesoramiento personalizado y el compromiso 
@@ -490,4 +588,18 @@
         <div class="footer-contact" id="contacto">
             <h2>¿Listo para encontrar tu hipoteca ideal?</h2>
             <p>Hablemos de tu proyecto. Sin compromiso, con total transparencia.</p>
-            <a href="mailto:jldomur.broker@gmail.com" class="btn-contact">Contacta Conmigo</a>
+            <div class="cta-buttons">
+            <a href="https://forms.gle/wwiLkNWbsLwDeV2B9" class="btn-wa" target="_blank">
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1v5h5M8 11h8M8 15h6" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+             <span>Accede a mi formulario</span>
+            </a>
+            <a href="https://wa.me/34621057804" class="btn-wa" target="_blank">
+    <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span>Escribeme por Whatsapp</span>
+  </a>
+        </div>
+</div>
